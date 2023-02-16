@@ -8,12 +8,16 @@ connection = obd.OBD("COM6")
 
 #Main while loop
 while True:
+    #Grab a timestamp per each loop iteration, this timestamp will be shared across tags that are read at slightly different times (milliseconds)
     timestamp = time.time()
     
+    #Loop over the channel names in the imported dictionary
     for channelName in channels.keys():
         try:
             cmd = channels[channelName]
-            response = connection.query(cmd)        
+            response = connection.query(cmd)   
+
+            #Build record dict per channel     
             record = {'Timestamp': timestamp,
                       'ChannelName':channelName,
                       'Value': float(str(response).split(' ')[0]),
