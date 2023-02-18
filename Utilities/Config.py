@@ -1,7 +1,7 @@
 programConfig = {
-    "SerialAddress":"COM6"
+    "SerialAddress":"COM6",
+    "Platform":"Laptop"
 }
-
 
 
 channels = {

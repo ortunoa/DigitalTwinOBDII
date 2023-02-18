@@ -13,7 +13,9 @@ while True:
 
     timestamp = time.time()
 
-    finalRecord.update(getGyroscopeData())
+    if programConfig["Platform"] == "RPi":
+        finalRecord.update(getGyroscopeData())
+
     finalRecord.update(getObd2Data(channels, serialAddress))
 
     print(finalRecord)
