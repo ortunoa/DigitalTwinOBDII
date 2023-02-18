@@ -3,7 +3,7 @@ import time
 
 #Import custom packages
 from Utilities.Gyroscope import getGyroscopeData
-from Utilities.Obd2 import
+from Utilities.Obd2 import getObd2Data
 from Utilities.Config import programConfig, channels
 
 serialAddress = programConfig['SerialAddress']

@@ -72,12 +72,13 @@ def getGyroscopeData():
 	Gy = gyro_y/131.0
 	Gz = gyro_z/131.0
 
-    return {
+	gyroDict = {
         "Ax":Ax,
         "Ay":Ay,
-        "Az":Az.
+        "Az":Az,
         "Gx":Gx,
         "Gy":Gy,
         "Gz":Gz
     }
-
+	
+	return gyroDict
