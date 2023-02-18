@@ -1,3 +1,5 @@
+import obd
+
 programConfig = {
     "SerialAddress":"COM6",
     "Platform":"Laptop"
@@ -13,7 +15,7 @@ channels = {
     'FuelLevel':obd.commands.FUEL_LEVEL,
     'AmbientTemp':obd.commands.AMBIANT_AIR_TEMP,
     'EngineOilTemp':obd.commands.OIL_TEMP,
-    'FuelRate':obd.commands.FUEL_RATE,
+    # 'FuelRate':obd.commands.FUEL_RATE,
     
 #     'FuelInjectorTiming':obd.commands.DTC_FUEL_INJECT_TIMING,
 #     'FuelInjectorTiming':obd.commands.FUEL_INJECT_TIMING,
