@@ -1,3 +1,9 @@
+programConfig = {
+    "SerialAddress":"COM6"
+}
+
+
+
 channels = {
     'RPM':obd.commands.RPM,
     'Speed':obd.commands.SPEED,
@@ -14,3 +20,5 @@ channels = {
 #     'FuelRate':obd.commands.FUEL_RATE,
 #     'FuelPressure':obd.commands.FUEL_PRESSURE
 }
+
+
