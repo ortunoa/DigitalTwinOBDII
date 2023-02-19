@@ -8,7 +8,7 @@ from Utilities.Config import programConfig, channels, dummyGyroscopeRecord, dumm
 
 #Initialize text file
 timestampForTextfile = str(time.time()).split('.')[0]
-textFile = open("{}.txt".format(timestampForTextfile), "a") # "a" means we want to append to the file
+textFile = open(r"DATA/{}.txt".format(timestampForTextfile), "a") # "a" means we want to append to the file
 
 
 if programConfig["Platform"] == "RPi":
