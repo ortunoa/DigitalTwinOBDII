@@ -1,10 +1,17 @@
 #Import Python modules
 import time
+import json
 
 #Import custom packages
 
 from Utilities.Obd2 import getObd2Data
-from Utilities.Config import programConfig, channels, dummyGyroscopeRecord, dummyObdData
+from Utilities.Setup import channels, dummyGyroscopeRecord, dummyObdData
+
+#Load configuration
+with open('config.json', 'r') as f:
+    # Load the contents of the file as a dictionary
+    programConfig = json.load(f)
+
 
 #Initialize text file
 timestampForTextfile = str(time.time()).split('.')[0]

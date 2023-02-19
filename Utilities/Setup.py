@@ -1,11 +1,5 @@
 import obd
 
-programConfig = {
-    "SerialAddress":"COM6",
-    "Platform":"Laptop"
-}
-
-
 channels = {
     'RPM':obd.commands.RPM,
     'Speed':obd.commands.SPEED,
