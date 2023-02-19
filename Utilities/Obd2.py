@@ -1,8 +1,12 @@
 #Imprort dependencies
 import obd
+import json
 import time
 
-from .Config import programConfig
+with open('config.json', 'r') as f:
+    # Load the contents of the file as a dictionary
+    programConfig = json.load(f)
+
 
 #This function returns an OBD connection to be used by the main getObd2Data function
 def getSerialConnection(serialAddress):
