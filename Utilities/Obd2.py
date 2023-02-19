@@ -33,8 +33,9 @@ def getObd2Data(channels):
 
             obd2Record.append(channelRecord)
         except Exception as e:
-            print('{} is not supported'.format(channelName))
-            print(e)
+            pass
+            # print('{} is not supported'.format(channelName))
+            # print(e)
 
     return obd2Record
 
