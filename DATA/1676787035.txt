@@ -1,3 +1,0 @@
-{'ObdData': [], 'GyroscopeData': {'Ax': 0, 'Ay': 0, 'Az': 0, 'Gx': 0, 'Gy': 0, 'Gz': 0}}
-{'ObdData': [], 'GyroscopeData': {'Ax': 0, 'Ay': 0, 'Az': 0, 'Gx': 0, 'Gy': 0, 'Gz': 0}}
-{'ObdData': [], 'GyroscopeData': {'Ax': 0, 'Ay': 0, 'Az': 0, 'Gx': 0, 'Gy': 0, 'Gz': 0}}

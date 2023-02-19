@@ -23,6 +23,8 @@ if programConfig["Platform"] == "RPi":
 
 serialAddress = programConfig['SerialAddress']
 
+i = 0
+
 while True: 
     thisRecord = {}
 
@@ -45,5 +47,13 @@ while True:
     print(thisRecord)
     textFile.write('{}\n'.format(thisRecord))
 
+    i+=1
+    if i > programConfig["LineLimit"]:
+        i=0
+        timestampForTextfile = str(time.time()).split('.')[0]
+        textFile = open(r"DATA/{}.txt".format(timestampForTextfile), "a") # "a" means we want to append to the file
+
+
     time.sleep(1)
+    print(i)
 
