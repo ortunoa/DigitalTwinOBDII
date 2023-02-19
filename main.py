@@ -9,9 +9,9 @@ from Utilities.Setup import channels, dummyGyroscopeRecord, dummyObdData
 
 #Load configuration
 with open('config.json', 'r') as f:
-    # Load the contents of the file as a dictionary.
+    # Load the contents of the file as a dictionary..
     programConfig = json.load(f)
-
+    
 
 #Initialize text file
 timestampForTextfile = str(time.time()).split('.')[0]
