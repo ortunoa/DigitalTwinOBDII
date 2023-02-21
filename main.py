@@ -2,6 +2,10 @@
 import time
 import json
 import RPi.GPIO as GPIO
+import os
+
+script_dir = os.path.dirname(os.path.abspath("main.py"))
+config_file_path = os.path.join(script_dir, "config.json")
 
 #Import custom packages
 
@@ -9,7 +13,7 @@ from Utilities.Obd2 import getObd2Data
 from Utilities.Setup import channels, dummyGyroscopeRecord, dummyObdData
 
 #Load configuration
-with open('config.json', 'r') as f:
+with open(config_file_path, 'r') as f:
     # Load the contents of the file as a dictionary..
     programConfig = json.load(f)
     
