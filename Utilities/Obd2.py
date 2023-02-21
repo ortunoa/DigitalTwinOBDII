@@ -2,13 +2,16 @@
 import obd
 import json
 import time
+import os
 
 from .Toolkit import getPortName
 
-with open('config.json', 'r') as f:
-    # Load the contents of the file as a dictionary
-    programConfig = json.load(f)
+script_dir = os.path.dirname(os.path.abspath("main.py"))
+config_file_path = os.path.join(script_dir, "config.json")
 
+with open(config_file_path, 'r') as f:
+    # Load the contents of the file as a dictionary..
+    programConfig = json.load(f)
 
 #This function returns an OBD connection to be used by the main getObd2Data function
 def getSerialConnection(serialAddress):
@@ -16,6 +19,8 @@ def getSerialConnection(serialAddress):
 
 
 connection = getSerialConnection(getPortName())
+
+connection = getSerialConnection("COM6")
 
 #This is the function that the main loop calls to get serial data every loop iteration
 def getObd2Data(channels):
