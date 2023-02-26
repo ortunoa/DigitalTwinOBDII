@@ -13,10 +13,15 @@ from Utilities.Obd2 import getObd2Data
 from Utilities.Setup import channels, dummyGyroscopeRecord, dummyObdData
 
 #Load configuration
-with open(config_file_path, 'r') as f:
+with open("config.json", 'r') as f:
     # Load the contents of the file as a dictionary..
     programConfig = json.load(f)
-    
+
+k=0
+make = programConfig['VehicleTags'][k]['Make']
+model = programConfig['VehicleTags'][k]['Model']
+year = programConfig['VehicleTags'][k]['Year']
+
     
 #Initialize LEDs
 GPIO.setwarnings(False)
@@ -41,7 +46,7 @@ GPIO.output(35, GPIO.HIGH) #set power green light on
 
 while True: 
     GPIO.output(37, GPIO.HIGH) #set activity blue light on
-    thisRecord = {}
+    thisRecord = {"Make":make, "Model":model,"Year":year}
 
     timestamp = time.time()
 
