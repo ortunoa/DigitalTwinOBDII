@@ -9,6 +9,8 @@ channels = {
     'FuelLevel':obd.commands.FUEL_LEVEL,
     'AmbientTemp':obd.commands.AMBIANT_AIR_TEMP,
     'EngineOilTemp':obd.commands.OIL_TEMP,
+    'ThrottlePosition':obd.commands.THROTTLE_POS,
+    'Airflowrate':obd.commands.MAF
     # 'FuelRate':obd.commands.FUEL_RATE,
     
 #     'FuelInjectorTiming':obd.commands.DTC_FUEL_INJECT_TIMING,
