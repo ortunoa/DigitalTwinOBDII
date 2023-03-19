@@ -46,8 +46,8 @@ GPIO.output(35, GPIO.HIGH) #set power green light on
 
 while True: 
     GPIO.output(37, GPIO.HIGH) #set activity blue light on
-    thisRecord = {"Make":make, "Model":model,"Year":year}
 
+    thisRecord = {"Make":make, "Model":model,"Year":year}
     timestamp = time.time()
 
     try:
