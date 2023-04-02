@@ -39,6 +39,6 @@ for i in range(df.shape[0]):
     
     payload = makeLineProtocol(engineLoad, airFlow, rpm, speed, throttle, ay)
     response = requests.post(url, params=params, headers=headers, data=payload)
-    print(payload)
+    # print(payload)
     print('Wrote record {}/{}    -    {}'.format(i, df.shape[0], response.status_code))
     time.sleep(1)
