@@ -9,20 +9,20 @@ firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://digitaltwinobdii-default-rtdb.firebaseio.com/'
 })
 
-def get_latest_model_with_highest_mse(vehicle_id):
+def get_latest_model_with_highest_r2(vehicle_id):
     ref = db.reference('digitalTwinModels')
     query = ref.order_by_child('Identifiers/Id').equal_to(vehicle_id)
     result = query.get()
 
     if result:
-        latest_model_key, latest_model_data = max(result.items(), key=lambda x: (x[1]['DateTime'], x[1]['Scores']['MSE']))
-        print(f"Latest model with the highest MSE score for vehicle ID '{vehicle_id}':\n{latest_model_data}")
+        latest_model_key, latest_model_data = max(result.items(), key=lambda x: (x[1]['DateTime'], x[1]['Scores']['R2']))
+        print(f"Latest model with the highest R2 score for vehicle ID '{vehicle_id}':\n{latest_model_data}")
         return latest_model_data
     else:
         print(f"No model found for vehicle ID '{vehicle_id}'")
         return None
     
 
-model = get_latest_model_with_highest_mse(vehicle_id)
+model = get_latest_model_with_highest_r2(vehicle_id)
 
 print(model)
