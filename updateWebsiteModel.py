@@ -6,11 +6,6 @@ import json
 vehicle_id = '1'
 website_config_path = r"C:\Users\ortun\OneDrive\PURDUE\CLASSES\ECE695\PROJECT\CODE\digitalTwinFrontEnd\vehicle-telematics-dashboard\src\config.json"
 
-cred = credentials.Certificate("digitaltwinobdii-firebase-adminsdk-dob8j-cbf5404441.json")
-firebase_admin.initialize_app(cred, {
-    'databaseURL': 'https://digitaltwinobdii-default-rtdb.firebaseio.com/'
-})
-
 def get_latest_model_with_highest_r2(vehicle_id):
     ref = db.reference('digitalTwinModels')
     query = ref.order_by_child('Identifiers/Id').equal_to(vehicle_id)
@@ -25,12 +20,21 @@ def get_latest_model_with_highest_r2(vehicle_id):
         return None
     
 
-model = get_latest_model_with_highest_r2(vehicle_id)
+try: 
+    cred = credentials.Certificate("digitaltwinobdii-firebase-adminsdk-dob8j-cbf5404441.json")
+    firebase_admin.initialize_app(cred, {
+        'databaseURL': 'https://digitaltwinobdii-default-rtdb.firebaseio.com/'
+    })
 
-with open(website_config_path, 'r') as f:
-    data = json.load(f)
+    model = get_latest_model_with_highest_r2(vehicle_id)
 
-data['model'] = {k + '_Coef': v for k, v in model['Coefficients'].items()}
+    with open(website_config_path, 'r') as f:
+        data = json.load(f)
 
-with open(website_config_path, 'w') as f:
-    json.dump(data, f, indent=4)
+    data['model'] = {k + '_Coef': v for k, v in model['Coefficients'].items()}
+
+    with open(website_config_path, 'w') as f:
+        json.dump(data, f, indent=4)
+
+except: 
+    pass
