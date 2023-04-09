@@ -19,7 +19,6 @@ def get_latest_model_with_highest_r2(vehicle_id):
 #         print(f"No model found for vehicle ID '{vehicle_id}'")
         return None
     
-
 try: 
     cred = credentials.Certificate("digitaltwinobdii-firebase-adminsdk-dob8j-cbf5404441.json")
     firebase_admin.initialize_app(cred, {
@@ -36,5 +35,7 @@ try:
     with open(website_config_path, 'w') as f:
         json.dump(data, f, indent=4)
 
-except: 
-    pass
+    print('Website model succesfully updated!')
+
+except Exception as e:
+    print('Failed! {}'.format(str(e)))
