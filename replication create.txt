@@ -1,0 +1,5 @@
+influx remote create --name twin-replication-to-cloud --remote-url https://us-east-1-1.aws.cloud2.influxdata.com --remote-api-token 16DWw5PS69JnmBsxp7NDgCEDnGEoCAJtU0usWelOvas-iMW2OJxpwKFBFwUkgfCNs-yF2IBPN2Z0l-8A6J67Xg== --remote-org-id 8ce88b1d73d3b508 --org-id c377fcc068342e21
+
+
+influx replication create --name digitaltwin-replication --remote-id 0af26e2df72f1000 --local-bucket-id a22e0fcf5f9d2bdf --remote-bucket-id 2b5ff5bcc0bc75c5 --org-id c377fcc068342e21
+
